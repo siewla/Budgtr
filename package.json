@@ -1,0 +1,25 @@
+{
+  "name": "budgtr",
+  "version": "1.0.0",
+  "description": "[![General Assembly Logo](/ga_cog.png)](https://generalassemb.ly)",
+  "main": "router.js",
+  "dependencies": {
+    "ejs": "^3.1.2",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/siewla/Budgtr.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/siewla/Budgtr/issues"
+  },
+  "homepage": "https://github.com/siewla/Budgtr#readme"
+}

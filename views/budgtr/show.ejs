@@ -5,10 +5,15 @@
         <%- include('../partials/head.ejs') %>
     </head>
     <body>
-        <h2>Name :<%=bakedItem.name%></h2>
-        <h3>Price :<%=bakedItem.price%></h3>
-        <img src=<%=bakedItem.image%>>
-        <br>
-        <a href="/bakedgoods"><-Back</a>
+       <div class="container">
+           <h1><%=budget.name%></h1>
+           <a class="waves-effect waves-light btn" href="/budgets">Back to Home</a>
+           <ul>
+               <li>date : <%=budget.date%></li>
+               <li>from : <%=budget.from%></li>
+               <li>amount : <%=budget.amount%></li>
+               <li>tags : <%=budget.tags%></li>
+           </ul>
+       </div>
     </body>
 </html>

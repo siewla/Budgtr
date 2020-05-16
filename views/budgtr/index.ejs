@@ -4,16 +4,20 @@
         <%- include('../partials/head.ejs') %>
     </head>
     <body>
-        <h2>Budgtr</h2>
-        <% budgets.forEach((item, index) => { %>
-            <li>
-                <a href="/budgets/<%=index%>"><%=item.name%></a>
-            </li>
+        <h1>Budgtr</h1>
+        <table>
+            <% budgets.forEach((item, index) => { %>
+            <tr>
+                <td><%=item.date%></td>
+                <td><a href="/budgets/<%=index%>"><%=item.name%></a></td>
+                <td><%=item.amount%></td>
+            </tr>
         <% }) %>
+
+        </table>
+       
         <br>
-        <h4>
-            <a href="/bakedgoods/new">Add New Item</a>
-        </h4>
+        <a class="waves-effect waves-light btn" href="/budgets/new">Add New Item</a>
         
     </body>
 </html>

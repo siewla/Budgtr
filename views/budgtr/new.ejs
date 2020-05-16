@@ -5,15 +5,20 @@
         <%- include('../partials/head.ejs') %>
     </head>
     <body>
-        <h2>Adding a New Item of Baked Goods</h2>
-        <form action="/bakedgoods" method="POST">
+        <a class="waves-effect waves-light btn" href="/budgets">Back to Home</a>
+        <h2>Add a New Item</h2>
+        <form action="/budgets" method="POST">
 			<label for="name">Name</label>
 			<input type="text" name="name" id="name" />
-			<label for="price">Price</label>
-            <input type="text" name="price" id="price" />
-            <label for="image">Image URL</label>
-			<input type="text" name="image" id="image-url" />
-			<input type="submit" value="Create Item" />
-		</form>
+			<label for="date">Date</label>
+            <input type="text" name="date" id="date" />
+            <label for="amount">Amount</label>
+            <input type="text" name="amount" id="amount"/>
+            <label for="tags">Tags</label>
+            <input type="text" name="tags" id="amount"/>
+            <button class="btn waves-effect waves-light" type="submit" name="action">Create New Item</button>
+        </form>
+        <br>
+        
     </body>
 </html>
