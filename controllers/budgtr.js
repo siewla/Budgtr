@@ -2,6 +2,10 @@
 const budgets = require('../models/budget');
 
 module.exports ={
+    home: (req, res) => {
+        res.render('budgtr/home.ejs');
+    },
+
     index: (req, res) => {
         res.render('budgtr/index.ejs', { budgets });
     },
