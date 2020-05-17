@@ -1,5 +1,5 @@
   
-const { home, index, init, show, create, update, edit, deleteItem } = require('./controllers/budgtr');
+const { home, index, init, show, create, update, edit, deleteItem, deleteAll } = require('./controllers/budgtr');
 
 module.exports = (app) => {
     app.get('/', home);
@@ -9,6 +9,8 @@ module.exports = (app) => {
     app.post('/budget', create); //create/post route
     app.put('/budget/:index', update); //update route
     app.get('/budget/:index/edit', edit); //edit route
+    app.delete('/budget/all', deleteAll); //delete all route
     app.delete('/budget/:index', deleteItem); //delete route
+    
 };
 

@@ -46,5 +46,10 @@ module.exports ={
     deleteItem: (req, res) => {
         budget.splice(req.params.index, 1);
         res.redirect('/budget');
+    },
+
+    deleteAll: (req, res) => {
+        budget.splice(0, budget.length);
+        res.redirect('/budget');
     }
 };
