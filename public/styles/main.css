@@ -2,3 +2,11 @@
     margin-left: 5vh;
     margin-right: 5vh;
 }
+
+.edit-button{
+    background-color: #1de9b6;
+}
+
+.delete-button{
+    background-color: #ff5252;
+}

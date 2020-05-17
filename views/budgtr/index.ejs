@@ -12,6 +12,7 @@
                         <th>Date</th>
                         <th>Name</th>
                         <th>Amount</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
     
@@ -19,8 +20,16 @@
                     <% budgets.forEach((item, index) => { %>
                     <tr>
                         <td><%=item.date%></td>
-                        <td><a href="/budgets/<%=index%>"><%=item.name%></a></td>
+                        <td><a href="/budget/<%=index%>"><%=item.name%></a></td>
                         <td><%=item.amount%></td>
+                        <td>
+                            <form action="/budget/<%=index%>/edit">
+                                <input type="submit" value="Edit" class="edit-button">
+                            </form>
+                            <form action="/budget/<%=index%>?_method=DELETE" method="POST">
+                                <input type="submit" value="Delete" class="delete-button">
+                            </form>
+                        </td>
                     </tr>
                     <% }) %>
                 </tbody>

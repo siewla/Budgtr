@@ -24,7 +24,8 @@ module.exports ={
     },
     create: (req, res) => {
         budgets.push(req.body);
-        res.redirect('/budgets');
+        let index=budgets.length-1;
+        res.redirect(`/budget/${index}`);
     },
 
     edit: (req, res) =>{
@@ -39,11 +40,11 @@ module.exports ={
     update: (req, res) => {
         budgets[req.params.index] = req.body;
         let index=req.params.index;
-        res.redirect(`/budgets/${index}`);
+        res.redirect(`/budget/${index}`);
     },
 
     deleteItem: (req, res) => {
         budgets.splice(req.params.index, 1);
-        res.redirect('/budgets');
+        res.redirect('/budget');
     }
 };
