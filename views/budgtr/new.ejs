@@ -5,20 +5,20 @@
         <%- include('../partials/head.ejs') %>
     </head>
     <body>
-        <a class="waves-effect waves-light btn" href="/budgets">Back to Home</a>
-        <h2>Add a New Item</h2>
-        <form action="/budgets" method="POST">
-			<label for="name">Name</label>
-			<input type="text" name="name" id="name" required="true"/>
-			<label for="date">Date</label>
-            <input type = "date" name="date" class = "datepicker" required="true" /> 
-            <label for="amount">Amount</label>
-            <input type="number" step="0.01" name="amount" id="amount" required="true"/>
-            <label for="tags">Tags</label>
-            <input type="text" name="tags" id="amount" required="true"/>
-            <button class="btn waves-effect waves-light" type="submit" name="action">Create New Item</button>
-        </form>
-        <br>
+        <h2>Create New Item</h2>
+        <div id =budget-form>
+            <form action="/budgets" method="POST">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" required="true"/>
+                <label for="date">Date</label>
+                <input type = "date" name="date" class = "datepicker" required="true" /> 
+                <label for="amount">Amount</label>
+                <input type="number" step="0.01" name="amount" id="amount" required="true"/>
+                <label for="tags">Tags</label>
+                <input type="text" name="tags" id="amount" required="true"/>
+                <button class="btn waves-effect waves-light" type="submit" name="action">Create New Item</button>
+            </form>
+        </div>
     </body>
    
 </html>

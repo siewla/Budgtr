@@ -1,0 +1,24 @@
+  
+<!doctype html>
+<html lang="en">
+    <head>
+        <%- include('../partials/head.ejs') %>
+    </head>
+    <body>
+        <h2>Edit Item</h2>
+        <div id =budget-form>
+            <form action="/budgets/<%=index%>?_method=PUT" method="PUT">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" value="<%=budget.name%>" required="true"/>
+                <label for="date">Date</label>
+                <input type = "date" name="date" class = "datepicker" value="<%=budget.date%>" required="true" /> 
+                <label for="amount">Amount</label>
+                <input type="number" step="0.01" name="amount" id="amount" value="<%=budget.amount%>" required="true"/>
+                <label for="tags">Tags</label>
+                <input type="text" name="tags" id="amount" value="<%=budget.tags%>" required="true"/>
+                <button class="btn waves-effect waves-light" type="submit" name="action">Save Edit</button>
+            </form>
+        </div>
+    </body>
+   
+</html>

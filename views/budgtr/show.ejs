@@ -5,13 +5,20 @@
         <%- include('../partials/head.ejs') %>
     </head>
     <body>
-        <a class="waves-effect waves-light btn" href="/budgets">Back to Home</a>
-        <h4><%=budget.name%></h4>
-        <ul>
-            <li>date : <%=budget.date%></li>
-            <li>from : <%=budget.from%></li>
-            <li>amount : <%=budget.amount%></li>
-            <li>tags : <%=budget.tags%></li>
-        </ul>
+        <h2>Budget Details</h2>
+        <div id="budget-details">
+            <h4>Name : <%=budget.name%></h4>
+            <h4>Date : <%=budget.date%></h4>
+            <h4>From : <%=budget.from%></h4>
+            <h4>Amount : <%=budget.amount%></h4>
+            <h4>Tags : <%=budget.tags%></h4> 
+            <div>
+                <!-- <a href="/budgets/<%=id%>/edit" class="btn waves-effect waves-light">Edit</a> -->
+                <!-- <form action="/budgets/<%=id%>/" method="DELETE">
+                    <button type="submit" class="btn waves-effect waves-light" value="DELETE">Delete</button>
+                </form>     -->
+            </div>
+        </div>
+       
     </body>
 </html>
