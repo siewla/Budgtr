@@ -1,5 +1,5 @@
 //database
-const budgets = require('../models/budget');
+const budget = require('../models/budget');
 
 module.exports ={
     home: (req, res) => {
@@ -7,7 +7,7 @@ module.exports ={
     },
 
     index: (req, res) => {
-        res.render('budgtr/index.ejs', { budgets });
+        res.render('budgtr/index.ejs', { budget });
     },
 
     init: (req, res) => {
@@ -17,34 +17,34 @@ module.exports ={
     show: (req, res) => {
         res.render('budgtr/show.ejs', 
             { 
-                budget: budgets[req.params.index],
+                budget: budget[req.params.index],
                 index: req.params.index
             }
         );
     },
     create: (req, res) => {
-        budgets.push(req.body);
-        let index=budgets.length-1;
+        budget.push(req.body);
+        let index=budget.length-1;
         res.redirect(`/budget/${index}`);
     },
 
     edit: (req, res) =>{
         res.render('budgtr/edit.ejs', 
             {
-                budget: budgets[req.params.index],
+                budget: budget[req.params.index],
                 index: req.params.index
             }
         );
     },
 
     update: (req, res) => {
-        budgets[req.params.index] = req.body;
+        budget[req.params.index] = req.body;
         let index=req.params.index;
         res.redirect(`/budget/${index}`);
     },
 
     deleteItem: (req, res) => {
-        budgets.splice(req.params.index, 1);
+        budget.splice(req.params.index, 1);
         res.redirect('/budget');
     }
 };
