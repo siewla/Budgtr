@@ -9,14 +9,16 @@ module.exports ={
     index: (req, res) => {
         res.render('budgtr/index.ejs', { budgets });
     },
+
     init: (req, res) => {
         res.render('budgtr/new.ejs');
     },
+
     show: (req, res) => {
         res.render('budgtr/show.ejs', 
             { 
-                budget: budgets[req.params.id],
-                id: req.params.id
+                budget: budgets[req.params.index],
+                index: req.params.index
             }
         );
     },
@@ -24,22 +26,24 @@ module.exports ={
         budgets.push(req.body);
         res.redirect('/budgets');
     },
+
     edit: (req, res) =>{
         res.render('budgtr/edit.ejs', 
             {
-                budget: budgets[req.params.id],
-                index: req.params.id
+                budget: budgets[req.params.index],
+                index: req.params.index
             }
         );
     },
 
     update: (req, res) => {
-        budgets[req.params.id] = req.body;
-        res.redirect('/budgets');
+        budgets[req.params.index] = req.body;
+        let index=req.params.index;
+        res.redirect(`/budgets/${index}`);
     },
 
-    // deleteItem: (req, res) => {
-    //     budgets.splice(req.params.id, 1);
-    //     res.redirect('/budgets');
-    // }
+    deleteItem: (req, res) => {
+        budgets.splice(req.params.index, 1);
+        res.redirect('/budgets');
+    }
 };

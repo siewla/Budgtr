@@ -13,10 +13,13 @@
             <h4>Amount : <%=budget.amount%></h4>
             <h4>Tags : <%=budget.tags%></h4> 
             <div>
-                <!-- <a href="/budgets/<%=id%>/edit" class="btn waves-effect waves-light">Edit</a> -->
-                <!-- <form action="/budgets/<%=id%>/" method="DELETE">
-                    <button type="submit" class="btn waves-effect waves-light" value="DELETE">Delete</button>
-                </form>     -->
+                <a href="/budgets/<%=index%>/edit" class="btn waves-effect waves-light">Edit</a>
+            </div>
+            <br>
+            <div>
+                <form action="/budgets/<%=index%>?_method=DELETE" method="POST">
+					<button type="submit" class="btn waves-effect waves-light" value="DELETE">Delete</button>
+				</form>
             </div>
         </div>
        
