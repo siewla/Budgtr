@@ -9,9 +9,6 @@ app.use(express.static('public'));
 app.use(express.json()); // for parsing application/json
 app.use(express.urlencoded({ extended: false }));
 
-// app.get('/budgets', (req, res) =>{
-//     res.render('/budgtr/index.ejs');
-// });
 require('./router')(app);
 
 //listener
