@@ -1,4 +1,6 @@
 $(()=>{
+    $('.sidenav').sidenav();
+    
     if ($('#bank-account').text()<0){
         $('#bank-account').css('color','red');
     } else if ($('#bank-account').text()>=0 && $('#bank-account').text()<=1000 ){
