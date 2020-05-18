@@ -5,6 +5,7 @@
     </head>
     <body>
         <h2>Budget List</h2>
+        <h3>Total:<span id="bank-account"><%=total%></span></h3>
         <div id ="budget-table">
             <table>
                 <thead>
@@ -21,7 +22,7 @@
                     <tr>
                         <td><%=item.date%></td>
                         <td><a href="/budget/<%=index%>"><%=item.name%></a></td>
-                        <td><%=item.amount%></td>
+                        <td class="item-amount"><%=item.amount%></td>
                         <td>
                             <form action="/budget/<%=index%>/edit">
                                 <input type="submit" value="Edit" class="edit-button">

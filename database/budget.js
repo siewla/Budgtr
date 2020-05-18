@@ -106,6 +106,14 @@ const budget = {
 
     deleteAllItems (){
         BUDGET.splice(0, BUDGET.length);
+    },
+
+    getTotal (){
+        let amountSum = 0;
+        BUDGET.forEach(budget=>{
+            amountSum+=parseFloat(budget.amount);
+        });
+        return amountSum.toFixed(2);
     }
 };
 

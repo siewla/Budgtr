@@ -7,7 +7,7 @@ module.exports ={
     },
 
     index: (req, res) => {
-        res.render('budgtr/index.ejs', { budget : budget.getAll() });
+        res.render('budgtr/index.ejs', { budget : budget.getAll(), total : budget.getTotal() });
     },
 
     init: (req, res) => {
