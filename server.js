@@ -12,7 +12,7 @@ app.use(express.static('public'));
 app.use(express.json()); // for parsing application/json
 app.use(express.urlencoded({ extended: false }));
 
-require('./router')(app);
+require('./routes/router')(app);
 
 //listener
 app.listen(port, () => {

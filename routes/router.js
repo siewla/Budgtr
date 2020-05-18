@@ -1,5 +1,5 @@
   
-const { home, index, init, show, create, update, edit, deleteItem, deleteAll } = require('./controllers/budgtr');
+const { home, index, init, show, create, update, edit, deleteItem, deleteAll } = require('../controllers/budgtr');
 
 module.exports = (app) => {
     app.get('/', home);

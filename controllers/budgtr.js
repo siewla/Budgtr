@@ -1,5 +1,5 @@
 //database
-const budget = require('../models/budget');
+const { budget , buildBudget } = require('../database/budget');
 
 module.exports ={
     home: (req, res) => {
@@ -7,7 +7,7 @@ module.exports ={
     },
 
     index: (req, res) => {
-        res.render('budgtr/index.ejs', { budget });
+        res.render('budgtr/index.ejs', { budget : budget.getAll() });
     },
 
     init: (req, res) => {
@@ -17,39 +17,40 @@ module.exports ={
     show: (req, res) => {
         res.render('budgtr/show.ejs', 
             { 
-                budget: budget[req.params.index],
+                budget: budget.getByIndex(req.params.index),
                 index: req.params.index
             }
         );
     },
     create: (req, res) => {
-        budget.push(req.body);
-        let index=budget.length-1;
+        const newBudget = buildBudget(req.body);
+        budget.addNew(newBudget);
+        let index=budget.getLength()-1;
         res.redirect(`/budget/${index}`);
     },
 
     edit: (req, res) =>{
         res.render('budgtr/edit.ejs', 
             {
-                budget: budget[req.params.index],
+                budget: budget.getByIndex(req.params.index),
                 index: req.params.index
             }
         );
     },
 
     update: (req, res) => {
-        budget[req.params.index] = req.body;
         let index=req.params.index;
+        budget.updateByIndex(index, req.body);
         res.redirect(`/budget/${index}`);
     },
 
     deleteItem: (req, res) => {
-        budget.splice(req.params.index, 1);
+        budget.deleteByIndex(req.params.index);
         res.redirect('/budget');
     },
 
     deleteAll: (req, res) => {
-        budget.splice(0, budget.length);
+        budget.deleteAllItems();
         res.redirect('/budget');
     }
 };
