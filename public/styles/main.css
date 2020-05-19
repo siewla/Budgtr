@@ -1,12 +1,53 @@
-#budget-table, #budget-form, #budget-details{
+#budget-table, #budget-form{
     margin-left: 5vh;
     margin-right: 5vh;
 }
 
+.budget-details-container{
+    margin-left: 5vh;
+}
+
 .edit-button{
     background-color: #1de9b6;
+    margin: 1vh;
 }
 
 .delete-button{
     background-color: #ff5252;
+    margin: 1vh;
+}
+
+.tags{
+    background-color: blue;
+    margin: 0.5vh;
+}
+
+.tags-index{
+    margin-right: 1vh;
+    background-color: lightcoral;
+    border-radius: 1vh;
+}
+
+.tags-container-index{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.tags-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.actions-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.budget-details {
+    width: max-content;
+    border: 1px solid black;
+    border-radius: 2vh;
+    padding: 2vh;
+
 }

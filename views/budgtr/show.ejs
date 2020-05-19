@@ -6,13 +6,27 @@
     </head>
     <body>
         <h2>Budget Details</h2>
-        <div id="budget-details">
-            <h4>Name : <%=budget.name%></h4>
-            <h4>Date : <%=budget.date%></h4>
-            <h4>From : <%=budget.from%></h4>
-            <h4>Amount : <%=budget.amount%></h4>
-            <h4>Tags : <%=budget.tags%></h4> 
-            <div>
+        <div class="budget-details-container">
+            <div class="budget-details">
+                <h4>Name : <%=budget.name%></h4>
+                <h4>Date : <%=budget.date%></h4>
+                <h4>From : <%=budget.from%></h4>
+                <h4>Amount : <%=budget.amount%></h4>
+                <div>
+                    <h4>Tags: </h4>
+                    <ul class = "tags-container">
+                        <%budget.tags.forEach((tag) => { %>
+                        <li>
+                            <button type="submit" class="btn waves-effect waves-light edit-button tags"><%=tag%></button>
+                        </li>
+                        <% }) %>
+                    </ul>
+                </div>   
+            </div>
+        
+            <br>
+
+            <div class = "actions-container">
                 <form action="/budget/<%=index%>/edit">
                     <button type="submit" class="btn waves-effect waves-light edit-button">Edit</button>
                 </form>

@@ -1,7 +1,7 @@
 //database
 const { budget , buildBudget } = require('../database/budget');
 
-module.exports ={
+const budgetControllers = {
     home: (req, res) => {
         res.render('budgtr/home.ejs');
     },
@@ -22,6 +22,7 @@ module.exports ={
             }
         );
     },
+    
     create: (req, res) => {
         const newBudget = buildBudget(req.body);
         budget.addNew(newBudget);
@@ -53,4 +54,8 @@ module.exports ={
         budget.deleteAllItems();
         res.redirect('/budget');
     }
+};
+
+module.exports = {
+    budgetControllers
 };
